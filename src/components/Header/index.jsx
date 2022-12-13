@@ -15,22 +15,30 @@ import {
     Wrapper,
 } from './styles';
 
-const Header = () => {
+const Header = ({autenticado, srcUserImg}) => {
   return (
     <Wrapper>
         <Container>
             <Row>
                 <img src={logoDio} alt="logo digital innovation one" width={64} height={64} />
-                <BuscarInputContainer>
-                    <Input placeholder='Buscar...' />
-                </BuscarInputContainer>
-                <Menu>Live Code</Menu>
-                <Menu>Global</Menu>
+                {autenticado ? (<>
+                    <BuscarInputContainer>
+                        <Input placeholder='Buscar...' />
+                    </BuscarInputContainer>
+                    <Menu>Live Code</Menu>
+                    <Menu>Global</Menu>
+                </>) : null}
+                
             </Row>
             <Row>
-                <MenuRight href='#'>Home</MenuRight>
-                <Button title="Entrar"/>
-                <Button title="Cadastrar"/>
+                {autenticado ? (
+                    <UserPicture src={srcUserImg} />
+                ) : (<>
+                    <MenuRight href='#'>Home</MenuRight>
+                    <Button title="Entrar"/>
+                    <Button title="Cadastrar"/>
+                </>)}
+                
             </Row>
 
         </Container>

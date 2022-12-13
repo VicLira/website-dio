@@ -14,7 +14,7 @@ import { UserInfo } from '../../components/UserInfo';
 const Feed = () => {
   return (
     <>
-        <Header/>
+        <Header autenticado={true} srcUserImg='https://avatars.githubusercontent.com/u/70662154?v=4'/>
         <Container>
           <Column flex={3}>
             <Title>Feed</Title>
