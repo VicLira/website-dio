@@ -10,8 +10,9 @@ import {
     UserInfo,
     UserPicture
 } from './styles';
+import { ICard } from './types';
 
-const Card = ({srcProjectBg,srcUserPicture}) => {
+const Card = ({srcProjectBg,srcUserPicture}: ICard) => {
   return (
     <CardContainer>
         <ImageBackground src={srcProjectBg}/>

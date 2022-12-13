@@ -14,8 +14,9 @@ import {
     UserPicture,
     Wrapper,
 } from './styles';
+import { IHeader } from './types';
 
-const Header = ({autenticado, srcUserImg}) => {
+const Header = ({autenticado, srcUserImg}: IHeader) => {
   return (
     <Wrapper>
         <Container>
@@ -35,8 +36,8 @@ const Header = ({autenticado, srcUserImg}) => {
                     <UserPicture src={srcUserImg} />
                 ) : (<>
                     <MenuRight href='#'>Home</MenuRight>
-                    <Button title="Entrar"/>
-                    <Button title="Cadastrar"/>
+                    <Button title="Entrar" onClick={() => null}/>
+                    <Button title="Cadastrar" onClick={() => null}/>
                 </>)}
                 
             </Row>

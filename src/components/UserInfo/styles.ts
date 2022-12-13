@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IUserInfoStyle } from "./types";
 
 export const Container = styled.div`
     width: 100%;
@@ -30,7 +31,7 @@ export const NameText = styled.div`
     color: #fff;
 `;
 
-export const Progress = styled.div`
+export const Progress = styled.div<IUserInfoStyle>`
     width: 100%;
     max-width: 180px;
     height: 6px;
