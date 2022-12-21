@@ -10,6 +10,7 @@ export const ButtonContainer = styled.button<IButtonStyled>`
     padding: 2px 12px;
     min-width: 120px;
     width: 100%;
+    max-width: 280px;
 
     font-family: 'Open Sans';
 

@@ -7,6 +7,7 @@ import {
 
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
+import { Cadastrar } from "./pages/Cadastrar"
 import { Feed } from "./pages/Feed"
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/cadastrar" element={<Cadastrar />} />
         <Route path="/feed" element={<Feed />} />
       </Routes>
     </Router>

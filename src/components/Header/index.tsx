@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button';
 
 import logoDio from '../../assets/logo-dio.png';
@@ -17,7 +18,18 @@ import {
 import { IHeader } from './types';
 
 const Header = ({autenticado, srcUserImg}: IHeader) => {
-  return (
+
+    const navigate = useNavigate()
+
+    const handleClickSignIn = () => {
+      navigate('/login');
+    }
+
+    const handleClickSignUp = () => {
+        navigate('/cadastrar');
+    }
+
+return (
     <Wrapper>
         <Container>
             <Row>
@@ -36,8 +48,8 @@ const Header = ({autenticado, srcUserImg}: IHeader) => {
                     <UserPicture src={srcUserImg} />
                 ) : (<>
                     <MenuRight href='#'>Home</MenuRight>
-                    <Button title="Entrar" onClick={() => null}/>
-                    <Button title="Cadastrar" onClick={() => null}/>
+                    <Button title="Entrar" onClick={handleClickSignIn}/>
+                    <Button title="Cadastrar" onClick={handleClickSignUp}/>
                 </>)}
                 
             </Row>

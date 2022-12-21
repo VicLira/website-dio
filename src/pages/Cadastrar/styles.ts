@@ -10,24 +10,26 @@ export const Container = styled.main`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 `;
 
 export const Wrapper = styled.div`
     width: 100%;
-    max-width: 380px;
+    max-width: 370px;
+
+    & > form {
+        margin-top: 35px;
+    }
+
+    & > form > button {
+        margin-top: 40px;
+        margin-bottom: 27px;
+    }
 `;
 
 export const Column = styled.div`
     width: auto;
-`;
-
-export const Row = styled.div`
-    max-width: 280px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    height: 100%;
 `;
 
 export const Title = styled.h2`
@@ -35,48 +37,51 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    width: 565px;
+    width: 388px;
     margin-bottom: 20px;
     line-height: 44px;
 
     color: #fff;
 `;
 
-export const TitleLogin = styled.p`
+export const TitleCadastro = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    width: 320px;
-    margin-bottom: 20px;
+    width: 360px;
+    margin-bottom: 8px;
     line-height: 44px;
 `;
 
-export const SubtitleLogin = styled.p`
+export const SubtitleCadastro = styled.p`
+    width: 100%;
+    max-width: 372px;
+
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    margin-bottom: 35px;
     line-height: 25px;
+
+    color: #FFFFFF;
 `;
 
-export const EsqueciText = styled.p`
+export const LoginText = styled.p`
+    width: 185px;
+
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
 
-    color: #e5e044;
-`;
+    margin-top: 10px;
 
-export const CriarText = styled.p`
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
+    color: #FFFFFF;
 
-    color: #e23DD7;
+    & > a {
+        color: #23DD7A;
+        text-decoration: none;
+    }
 `;
