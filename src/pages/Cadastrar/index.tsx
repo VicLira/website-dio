@@ -4,6 +4,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
+import { api } from '../../services/api'
+
 import {
     Container,
     Column,
@@ -33,10 +35,24 @@ interface IFormInputs {
 
 const Cadastrar = () => {
 
-    const { control, formState: { errors } } = useForm<IFormInputs>({
+    const { control, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
         resolver: yupResolver(schema),
         mode: 'onChange',
       });
+
+    const onSubmit: SubmitHandler<IFormInputs> = async formData => {
+        try{
+          const { data } = await api.get(`users`)
+          api.post({
+            id: data.length++,
+            name: formData.fullName,
+            email: formData.email,
+            senha: formData.password,
+          })
+        }catch{
+          alert('Houve um erro')
+        }
+    };
 
     return (
     <>
@@ -52,7 +68,7 @@ const Cadastrar = () => {
                 <Wrapper>
                     <TitleCadastro>Comece agora grátis</TitleCadastro>
                     <SubtitleCadastro>Crie sua conta e make the change._</SubtitleCadastro>
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <Input 
                             name='fullName'
                             errorMessage={errors.fullName?.message}
