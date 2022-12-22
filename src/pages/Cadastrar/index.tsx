@@ -42,13 +42,21 @@ const Cadastrar = () => {
 
     const onSubmit: SubmitHandler<IFormInputs> = async formData => {
         try{
-          const { data } = await api.get(`users`)
-          api.post({
-            id: data.length++,
-            name: formData.fullName,
-            email: formData.email,
-            senha: formData.password,
-          })
+            const { data } = await api.get(`users?email=${formData.email}`)
+            let nUser = await api.get('users')
+                                .then((response) => response.data)
+        
+            if(data.length===1){
+                alert('E-mail já cadastrado')
+            } else {
+                api.post('users', {
+                    id: nUser.length+=1,
+                    name: formData.fullName,
+                    email: formData.email,
+                    senha: formData.password,
+                })
+            }
+
         }catch{
           alert('Houve um erro')
         }

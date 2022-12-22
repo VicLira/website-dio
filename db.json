@@ -1,6 +1,40 @@
 {
-    "users": [
-        { "id": 1, "name": "victor lira", "email": "victor.lira@gmail.com", "senha": "123456"},
-        { "id": 2, "name": "joão vitor", "email": "joao.vitor@gmail.com", "senha": "123456"}
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "victor lira",
+      "email": "victor.lira@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "name": "joão vitor",
+      "email": "joao.vitor@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Teste",
+      "email": "teste@gmail.com",
+      "senha": "teste"
+    },
+    {
+      "id": 4,
+      "name": "Teste2",
+      "email": "teste2@gmail.com",
+      "senha": "teste"
+    },
+    {
+      "id": 5,
+      "name": "Teste3",
+      "email": "teste3@gmail.com",
+      "senha": "test3"
+    },
+    {
+      "id": 6,
+      "name": "Teste4",
+      "email": "teste4@gmail.com",
+      "senha": "test3"
+    }
+  ]
 }
